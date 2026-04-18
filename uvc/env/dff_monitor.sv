@@ -21,7 +21,7 @@ class dff_monitor extends uvm_monitor;
   virtual task run_phase(uvm_phase phase);
     forever begin 
       
-      repeat(1) @(posedge vif.mon_cb);
+      repeat(1) @(vif.mon_cb);
        transaction.rst = vif.mon_cb.rst;
  
        transaction.data_in = vif.mon_cb.din;
