@@ -32,7 +32,7 @@ endfunction
 
     virtual task run_phase(uvm_phase phase);
        forever begin
-           @(posedge vif.mon_cb);
+           @(vif.mon_cb);
               transaction = dff_item::type_id::create("transaction",this);
                 transaction.rst = vif.mon_cb.rst;
 	        transaction.data_in = vif.mon_cb.din;
